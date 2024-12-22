@@ -19,9 +19,8 @@ jobs:
   
       - name: "Upload to server."
         run: |
-          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "export MANDY_ENV=\"production\""
           sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};rm -rf *;"
           sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};git clone https://github.com/alyxshang/alyxshang.boo"
-          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};cd alyxshang.boo;mandy -c ."
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};cd alyxshang.boo;export MANDY_ENV=production;mandy -c ."
           sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};mv alyxshang.boo/dist/* .;rm -rf alyxshang.boo"
           sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};tree"
