@@ -3,32 +3,25 @@ on:
   push:
     branches: [ main ]
 env:
-  MANDY_ENV: "production"
-  MANDY_VERSION: "0.1.0"
+  SERVER_IP: ${{ secrets.SERVER_IP }}
+  USERNAME: ${{ secrets.SERVER_USER }}
+  PWD: ${{ secrets.SERVER_PWD }}
+  TARGET_DIR: ${{ secrets.TARGET_DIR }}
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-
-      - name: "Install WGet."
+      
+      
+      - name: "Install SSHPass."
+        run: sudo apt update && sudo apt install sshpass -y
+  
+      - name: "Upload to server."
         run: |
-          sudo apt update
-          sudo apt install wget
-          
-      - name: "Install Mandy."
-        run: wget https://github.com/alyxshang/mandy/releases/download/v.${{ env.MANDY_VERSION }}/mandy-linux-v.${{ env.MANDY_VERSION }}
-        
-      - name: "Build the Mandy project."
-        run: |
-          chmod a+x mandy-linux-v.${{ env.MANDY_VERSION }}
-          ./mandy-linux-v.${{ env.MANDY_VERSION }} -c .
-
-      - name: "Deploy the compiled site."
-        uses: JamesIves/github-pages-deploy-action@v4.2.5
-        with:
-          branch: gh-pages
-          folder: dist
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "export MANDY_ENV=\"production\""
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};rm -rf *;"
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};git clone https://github.com/alyxshang/alyxshang.boo"
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};cd alyxshang.boo;mandy -c ."
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};mv alyxshang.boo/dist/* .;rm -rf alyxshang.boo"
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};tree"
