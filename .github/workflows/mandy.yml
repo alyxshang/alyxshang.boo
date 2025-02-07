@@ -1,0 +1,26 @@
+name: Mandy Project CI
+on:
+  push:
+    branches: [ main ]
+env:
+  SERVER_IP: ${{ secrets.SERVER_IP }}
+  USERNAME: ${{ secrets.SERVER_USER }}
+  PWD: ${{ secrets.SERVER_PWD }}
+  TARGET_DIR: ${{ secrets.TARGET_DIR }}
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      
+      - name: "Install SSHPass."
+        run: sudo apt update && sudo apt install sshpass -y
+  
+      - name: "Upload to server."
+        run: |
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};rm -rf *;"
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};git clone https://github.com/alyxshang/alyxshang.boo"
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};cd alyxshang.boo;export MANDY_ENV=production;mandy -c ."
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};mv alyxshang.boo/dist/* .;rm -rf alyxshang.boo"
+          sshpass -p ${{ env.PWD }} ssh -o "StrictHostKeyChecking=no" ${{ env.USERNAME }}@${{ env.SERVER_IP }} "cd ${{ env.TARGET_DIR }};tree"

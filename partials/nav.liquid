@@ -1,0 +1,8 @@
+<div class="nav" id="nav">
+ <ul class="nav">
+  {% for item in data["nav"] %}
+   <li class="nav"><a class="nav" href="{{ baseurl }}{{ item.link }}">{{ item.name }}</a></li>
+  {% endfor %}
+  <button class="closer" onclick="closeNav('nav')">CLOSE</button>
+ </ul>
+</div>

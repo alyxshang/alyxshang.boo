@@ -1,0 +1,324 @@
+/*
+Personal Website by Alyx Shang.
+Licensed under the FSL v1.
+*/
+
+@import 'vars';
+
+html {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+body {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    background-color: $bgColor;
+}
+button.nav {
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    font-size: 1.5rem;
+    padding: 15px;
+    display: none;
+    border: none;
+    transition-duration: 0.6s;
+    font-family: $headingFont;
+    color: $bgColor;
+    background-color: $fontColor;
+}
+button.nav:hover {
+    padding: 20px;
+}
+button.closer {
+    top: 0;
+    right: 0;
+    border: none;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+    font-size: 1.5rem;
+    padding: 15px;
+    display: none;
+    transition-duration: 0.6s;
+    font-family: $headingFont;
+    color: $fontColor;
+    background-color: $bgColor;
+}
+button.closer:hover {
+    padding: 20px;
+}
+div.header {
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-top: none;
+    border-left: none;
+    background-color: $bgColor;
+    border-right: none;
+    border-bottom: 3px solid $fontColor;
+}
+div.columns {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+}
+img.pfp {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding: 0px;
+    margin-right: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border: 3px solid $fontColor;
+    width: 75px;
+    height: 75px;
+    object-fit:contain;
+}
+div.nav {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0px;
+    margin: 0px;
+}
+ul.nav {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+li.nav, a.nav {
+    padding-right: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2rem;
+    text-decoration: underline solid transparent;
+    transition: text-decoration 1s ease;
+    font-weight: bolder;
+    font-family: $headingFont;
+    color: $fontColor;
+}
+li.nav:hover, a.nav:hover {
+    text-decoration: underline solid;
+}
+li.nav::before{
+    content: '';
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin: 0px;
+}
+div.heading {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0px;
+    padding: 0px;
+    /* Makes flexbox behave START. */
+    flex-basis: calc(5rem + 40px);
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-width: 0;
+    /* Makes flexbox behave END. */
+    background-color: $fontColor;
+    width: fit-content;
+    height: 100vh;
+    border: none;
+    position: sticky;
+}
+h1 {
+    text-align: center;
+    padding: 20px;
+    margin: 0px;
+    font-size: 5rem;
+    font-family: $headingFont;
+    color: $bgColor;
+    writing-mode: vertical-rl;
+
+}
+div.content {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+div.item {
+    width: 100%;
+    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+h2.item {
+    font-size: 4rem;
+    margin: 0px;
+    font-family: $headingFont;
+    color: $fontColor;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+a.itemHeading{
+    font-size: 4rem;
+    margin: 0px;
+    font-family: $headingFont;
+    color: $fontColor;
+    text-decoration: underline solid transparent;
+    transition: text-decoration 1s ease;
+    padding: 0px;
+}
+a.itemHeading:hover{
+    text-decoration: underline solid;
+}
+p.item {
+    margin: 0px;
+    font-size: 1.5rem;
+    color: $fontColor;
+    font-weight: bolder;
+    font-family: $contentFont;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+div.textContent {
+    margin: 0 auto;
+    display: block;
+    width: 90%;
+}
+h2 {
+    font-size: 4rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    text-align: left;
+    font-family: $headingFont;
+    color: $fontColor;
+}
+h3 {
+    font-size: 3.6rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    text-align: left;
+    font-family: $headingFont;
+    color: $fontColor;
+}
+h4 {
+    font-size: 3.2rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    text-align: left;
+    font-family: $headingFont;
+    color: $fontColor;
+}
+p {
+    font-size: 1.5rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    padding-top: 0px;
+    margin: 0px;
+    text-align: left;
+    font-weight: bolder;
+    font-family: $contentFont;
+    color: $fontColor;
+}
+a {
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: bolder;
+    font-family: $contentFont;
+    color: $fontColor;
+    text-decoration: underline solid transparent;
+    transition: text-decoration 1s ease;
+}
+a:hover {
+    text-decoration: underline solid;
+}
+ul {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    text-align: left;
+    list-style: none;
+}
+li {
+    font-size: 1.5rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    margin: 0px;
+    text-align: left;
+    font-weight: bolder;
+    font-family: $contentFont;
+    color: $fontColor;
+}
+li::before{
+    content: '-';
+    padding-left: 0px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin: 0px;
+}
+img {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    border-radius: 15px;
+    padding: 0px;
+}
+div.spacer {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: 2rem;
+}
