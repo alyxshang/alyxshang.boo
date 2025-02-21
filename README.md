@@ -10,7 +10,7 @@ This repository contains the source code for my website. This website contains m
 
 ## LINKS :chains:
 
-- Clearweb link: [alxshang.boo](https://alyxshang.boo)
+- Clearweb link: [alyxshang.boo](https://alyxshang.boo)
 - Darkweb link: [qestptdvibm5ujwb2h3lh634ydhmlzvtmwvik7mv2vrm7irss2jc7xyd.onion](http://qestptdvibm5ujwb2h3lh634ydhmlzvtmwvik7mv2vrm7irss2jc7xyd.onion)
 
 ## NOTE :scroll:
