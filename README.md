@@ -8,11 +8,6 @@
 
 This repository contains the source code for my website. This website contains my portfolio of code I've written and my blog on a variety of topics.
 
-## LINKS :chains:
-
-- Clearweb link: [alyxshang.boo](https://alyxshang.boo)
-- Darkweb link: [qestptdvibm5ujwb2h3lh634ydhmlzvtmwvik7mv2vrm7irss2jc7xyd.onion](http://qestptdvibm5ujwb2h3lh634ydhmlzvtmwvik7mv2vrm7irss2jc7xyd.onion)
-
 ## NOTE :scroll:
 
 - *My Website :black_heart:* by *Alyx Shang :black_heart:*.
