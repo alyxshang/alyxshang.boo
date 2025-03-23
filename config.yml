@@ -4,7 +4,7 @@ prod_url: ""
 dev_url: ""
 dist_dir: "dist"
 copy_files: true
-copy_entities: ["assets"]
+copy_entities: ["assets", "CNAME"]
 has_loop_content: false
 tl_domain: "https://alyxshang.boo"
 seo: true
