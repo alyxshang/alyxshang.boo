@@ -33,7 +33,7 @@ body {
   height: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  background-color: #FBF7F5;
+  background-color: #FEEBF0;
 }
 
 button.nav {
@@ -47,7 +47,7 @@ button.nav {
   border: none;
   transition-duration: 0.6s;
   font-family: "FluroBold";
-  color: #FBF7F5;
+  color: #FEEBF0;
   background-color: #000000;
 }
 
@@ -69,7 +69,7 @@ button.closer {
   transition-duration: 0.6s;
   font-family: "FluroBold";
   color: #000000;
-  background-color: #FBF7F5;
+  background-color: #FEEBF0;
 }
 
 button.closer:hover {
@@ -89,7 +89,7 @@ div.header {
   justify-content: space-between;
   border-top: none;
   border-left: none;
-  background-color: #FBF7F5;
+  background-color: #FEEBF0;
   border-right: none;
   border-bottom: 3px solid #000000;
 }
@@ -188,7 +188,7 @@ h1 {
   margin: 0px;
   font-size: 5rem;
   font-family: "FluroBold";
-  color: #FBF7F5;
+  color: #FEEBF0;
   writing-mode: vertical-rl;
 }
 
@@ -388,7 +388,7 @@ Licensed under the FSL v1.
   li.nav, a.nav {
     font-family: "FluroBold";
     font-size: 3rem;
-    color: #FBF7F5;
+    color: #FEEBF0;
     padding-top: 0px;
     padding-bottom: 20px;
     text-decoration: underline solid transparent;
