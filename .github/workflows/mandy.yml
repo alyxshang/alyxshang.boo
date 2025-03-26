@@ -11,22 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: alyxshang/mandy-github-action@v.0.1.0
-
-      #- name: "Fetch Mandy."
-      #  run: wget ${{ env.MANDY_URL }}
-
-      #- name: "Build the Mandy site."
-      #  run: |
-      #    chmod a+x mandy-linux-v.0.1.0
-      #    ./mandy-linux-v.0.1.0 -c .
-
-      #- name: "Verify the build."
-      #  run: tree
-
-      
       - name: "Build the Mandy site"
         run: mandy -c .
-
       - name: "Deploy the built site."
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
