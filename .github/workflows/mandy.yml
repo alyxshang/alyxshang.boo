@@ -24,7 +24,7 @@ jobs:
       - name: "Build the \".boo\" site."
         run: |
           mkdir boo
-          git clone https://${{ env.TOKEN}}@github.com/${{ env.USER }}/alyxshang.boo .
+          git clone https://${{ env.TOKEN}}@github.com/${{ env.USER }}/alyxshang.boo boo
           cd boo
           rm -rf moe.txt
           mv  boo.txt CNAME
@@ -34,7 +34,7 @@ jobs:
       - name: "Build the \".moe\" site."
         run: |
           mkdir moe
-          git clone https://${{ env.TOKEN}}@github.com/${{ env.USER }}/alyxshang.boo .
+          git clone https://${{ env.TOKEN}}@github.com/${{ env.USER }}/alyxshang.boo moe
           cd moe
           rm -rf boo.txt
           mv moe.txt CNAME
