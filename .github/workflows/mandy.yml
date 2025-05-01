@@ -21,15 +21,10 @@ jobs:
           git config --global user.name ${{ env.USER }}
           git config --global user.email ${{env.EMAIL }}
 
-      - name: "Make copies of the source."
-        run: |
-          mkdir moe
-          mkdir boo
-          cp -rf !(moe|boo) * moe
-          cp -rf !(moe|boo) * boo
-
       - name: "Build the \".boo\" site."
         run: |
+          mkdir boo
+          git clone https://${{ env.TOKEN}}@github.com/${{ env.USER }}/alyxshang.boo
           cd boo
           rm -rf moe.txt
           mv  boo.txt CNAME
@@ -38,6 +33,8 @@ jobs:
 
       - name: "Build the \".moe\" site."
         run: |
+          mkdir moe
+          git clone https://${{ env.TOKEN}}@github.com/${{ env.USER }}/alyxshang.boo
           cd moe
           rm -rf boo.txt
           mv moe.txt CNAME
