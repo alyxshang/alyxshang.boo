@@ -49,9 +49,9 @@ jobs:
         run: |
           cd alyxshang.moe
           git checkout -b gh_pages
+          mv ../moe/dist .
           git add -A
           git commit -m "${date}"
-          mv ../moe/dist/* .
           git push -u origin gh_pages --force
 
       - name: "Deploy the built site to the \"boo\" TLD."
