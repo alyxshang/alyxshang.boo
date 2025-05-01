@@ -4,7 +4,9 @@ on:
     branches: [ main ]
 env:
   MANDY_ENV: "production"
-  MANDY_URL: "https://github.com/alyxshang/mandy/releases/download/v.0.1.0/mandy-linux-v.0.1.0"
+  TOKEN: ${{ secrets.TOKEN }}
+  EMAIL: ${{ secrets.EMAIL }}
+  USER: ${{ secrets.USERNAME }}
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
@@ -13,8 +15,50 @@ jobs:
       - uses: alyxshang/mandy-github-action@v.0.1.0
       - name: "Build the Mandy site"
         run: mandy -c .
-      - name: "Deploy the built site."
+
+      - name: "Configure Git."
+        run: |
+          git config --global user.name ${{ env.USER }}
+          git config --global user.email ${{env.EMAIL }}
+
+      - name: "Make copies of the source."
+        run: |
+          mkdir moe
+          mkdir boo
+          cp -rf !(moe|boo) * moe
+          cp -rf !(moe|boo) * boo
+
+      - name: "Build the \".boo\" site."
+        run: |
+          cd boo
+          rm -rf moe.txt
+          mv  boo.txt CNAME
+          mandy -c .
+          cd ..
+
+      - name: "Build the \".moe\" site."
+        run: |
+          cd moe
+          rm -rf boo.txt
+          mv moe.txt CNAME
+          mandy -c .
+          cd ..
+
+      - name: "Clone the Moe repository."
+        run: |
+          git clone https://${{ env.TOKEN }}@github.com/${{ env.USER }}/alyxshang.moe
+
+      - name: "Push the built \".moe\" site."
+        run: |
+          cd alyxshang.moe
+          git checkout -b gh_pages
+          git add -A
+          git commit -m "${date}"
+          mv ../moe/dist/* .
+          git push -u origin gh_pages --force
+
+      - name: "Deploy the built site to the \"boo\" TLD."
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: dist
+          folder: boo/dist
