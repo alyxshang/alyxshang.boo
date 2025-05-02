@@ -28,6 +28,7 @@ jobs:
           cd boo
           rm -rf moe.txt
           mv  boo.txt CNAME
+          mv config.boo.yml config.yml
           mandy -c .
           cd ..
 
@@ -38,6 +39,7 @@ jobs:
           cd moe
           rm -rf boo.txt
           mv moe.txt CNAME
+          mv config.moe.yml config.yml
           mandy -c .
           cd ..
 
