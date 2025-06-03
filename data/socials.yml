@@ -9,3 +9,7 @@
 - name: "My profile on X"
   link: "https://x.com/iamalyxshang"
   description: "My profile on X on which things of importance will be announced in the near future."
+
+- name: "Cardano Address"
+  link: "https://cexplorer.io/address/addr1qxldx32qnrw9k9jct0hvcarkulyr33q7ftd6pfyz8he3fuxatrq3lkvnh7rxnmqc0try7zd75pcge254vwafcm9ty7jqpga5ea/tx#data"
+  description: "My address on the Cardano blockchain, should you want to send me payments for something."
