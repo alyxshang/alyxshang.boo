@@ -9,7 +9,7 @@ has_loop_content: false
 tl_domain: "https://alyxshang.moe"
 seo: true
 user_config:
-  fediUrl: fediUrl: https://miruku.cafe/@alyxshang
+  fediUrl: https://miruku.cafe/@alyxshang
   navHeading: LINKS
   blog_heading: My Blog
   socialsHeading: SOCIALS
