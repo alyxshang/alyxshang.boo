@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+ {% include 'head' %}
+ <body>
+ {% include 'header' %}
+ <div class="columns">
+  {% include 'heading' %}
+  <div class="content">
+   {% for post in loop_content["posts"] %}
+    <div class="item">
+     <a class="itemHeading" href="{{ baseurl }}/{{ post.url }}"><h2 class="item">{{ post.title }}</h2></a>
+     <p class="item">{{ post.description }}</p>
+    </div>
+    {% endfor %}
+   </div>
+  </div>
+  {% include 'scripts' %}
+ </body>
+</html>

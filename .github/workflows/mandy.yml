@@ -1,0 +1,24 @@
+name: Mandy Project CI
+on:
+  push:
+    branches: [ main ]
+env:
+  MANDY_ENV: "production"
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: alyxshang/mandy-github-action@v.0.2.0
+      - name: "Build the Mandy site"
+        run: mandy -c .
+
+      - name: "Build the \".boo\" site."
+        run: |
+          mandy -c .
+
+      - name: "Deploy the built site."
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: dist

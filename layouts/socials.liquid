@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+ {% include 'head' %}
+ <body>
+  {% include 'header' %}
+  <div class="columns">
+   {% include 'heading' %}
+   <div class="content">
+    {% for link in data["socials"] %}
+     <div class="item">
+      <a class="itemHeading" href="{{ link.link }}"><h2 class="item">{{ link.name }}</h2></a>
+      <p class="item">{{ link.description }}</p>
+     </div>
+    {% endfor %}
+   </div>
+  </div>
+  {% include 'scripts' %}
+ </body>
+</html>

@@ -1,0 +1,94 @@
+/*
+Personal Website by Alyx Shang.
+Licensed under the FSL v1.
+*/
+
+@media screen and (max-width: 800px) {
+    div.nav {
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 3;
+        bottom: 0;
+        padding: 0px;
+        margin: 0px;
+        overflow: hidden;
+        width: 0vw;
+        height: 100vh;
+        position: fixed;
+        transition-duration: 0.6s;
+        background-color: $fontColor;
+    }
+    ul.nav {
+        list-style: none;
+        padding: 0px;
+        margin: 2rem;
+    }
+    li.nav, a.nav {
+        font-family: $headingFont;
+        font-size: 3rem;
+        color: $bgColor;
+        padding-top: 0px;
+        padding-bottom: 20px;
+        text-decoration: underline solid transparent;
+        transition: text-decoration 1s ease;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin: 0px;
+        display: block;
+        text-decoration: none;
+    }
+    li.nav:hover,a.nav:hover{
+        text-decoration: underline solid;
+    }
+    li.nav::before{
+        content: '';
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin: 0px;
+    }
+    button.nav {
+        display: block;
+    }
+    button.closer {
+        display: block;
+    }
+    div.heading{
+        display: none;
+    }
+    h2.item {
+        font-size: 3.5rem;
+    }
+    a.itemHeading{
+        font-size: 3.5rem;
+    }
+    p.item {
+        font-size: 1.25rem;
+    }
+    div.textContent {
+        width: 95%;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h3 {
+        font-size: 1.8rem;
+    }
+    h4 {
+        font-size: 1.6rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    li {
+        font-size: 1rem;
+    }
+    div.spacer {
+        height: 1.8rem;
+    }
+    a {
+        font-size: 1rem;
+    }
+}
