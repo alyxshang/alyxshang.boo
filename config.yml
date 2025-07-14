@@ -9,6 +9,7 @@ has_loop_content: false
 tl_domain: "https://alyxshang.boo"
 seo: true
 user_config:
+  fediUrl: https://corteximplant.com/@alyxshang
   navHeading: LINKS
   blog_heading: My Blog
   socialsHeading: SOCIALS
