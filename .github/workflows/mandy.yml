@@ -13,10 +13,6 @@ jobs:
       - name: "Build the Mandy site"
         run: mandy -c .
 
-      - name: "Build the \".boo\" site."
-        run: |
-          mandy -c .
-
       - name: "Deploy the built site."
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
