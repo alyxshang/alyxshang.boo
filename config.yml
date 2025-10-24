@@ -12,6 +12,7 @@ user_config:
   navHeading: LINKS
   blog_heading: My Blog
   socialsHeading: SOCIALS
+  socialLink: https://example.com/@alyxshang
   pfp: https://avatars.githubusercontent.com/u/179976644?v=4
   bannerUrl: https://cdn.alyxshang.boo/images/site//banner/banner.png
   icon_manifest: https://cdn.alyxshang.boo/images/site/icons/manifest.json
